@@ -1,0 +1,55 @@
+{
+    "status": "ok",
+    "result": {
+        "backblaze": {
+            "type": {
+                "label": "type",
+                "type": "hidden",
+                "readonly": false,
+                "default": null,
+                "value": "backblaze",
+                "required": false
+            },
+            "username": {
+                "id": "b2_key_id",
+                "label": "username",
+                "type": "text",
+                "placeholder": "Key ID",
+                "readonly": false,
+                "default": null,
+                "value": null,
+                "required": true
+            },
+            "password": {
+                "id": "b2_key_secret",
+                "label": "password",
+                "type": "password",
+                "placeholder": "Application key",
+                "readonly": false,
+                "default": null,
+                "value": null,
+                "required": true
+            },
+            "bucketName": {
+                "id": "b2_bucket_name",
+                "label": "bucketName",
+                "type": "text",
+                "placeholder": "Bucket name",
+                "readonly": false,
+                "default": null,
+                "value": null,
+                "required": true
+            },
+            "endpoint": {
+                "id": "b2_endpoint",
+                "label": "endpoint",
+                "type": "text",
+                "placeholder": "Endpoint",
+                "readonly": false,
+                "default": null,
+                "value": null,
+                "required": true
+            }
+        }
+    }
+}

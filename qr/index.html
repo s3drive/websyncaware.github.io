@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR code generator</title>
+
+    <style>
+        #qrcode {
+            width: 160px;
+            height: 160px;
+            margin-top: 15px;
+        }
+    </style>
+
+    <script type="text/javascript" src="/qr/jquery.min.js"></script>
+    <script type="text/javascript" src="/qr/qrcode.js"></script>
+</head>
+<body>
+
+<h1>Client-side QR code generator</h1>
+
+<div>
+<small>After you generate <a href="https://secure.backblaze.com/app_keys.htm" target="_blank">Backblaze app key</a>, paste the output below to generate the QR code which you can use to pass credentials to your mobile.</small> <br><br/>
+<textarea id="text" style="min-width: 370px; min-height:100px;" placeholder="Success! Your new application key has been created. It will only appear here once..."></textarea><br>
+
+<br/>
+<small>E.g. message, that you shall receive from Backblaze:</small><br/>
+<img src="/qr/credentials.png" style="margin-top: 10px"> <br/>
+
+<div id="qrcode" style="width:125px; height:125px; margin-top:15px;"></div>
+</div>
+
+<script type="application/javascript">
+    var qrcode = new QRCode("qrcode");
+
+    function makeCode() {
+        var elText = document.getElementById("text");
+        if (elText.value.length > 0) {
+            qrcode.makeCode(elText.value);
+        }
+    }
+
+    $("#text").on("blur", function () {
+        makeCode();
+    }).on("keydown", function (e) {
+        makeCode();
+    }).on("paste", function (e) {
+        console.log("paste")
+        setTimeout(function() {
+            makeCode();
+        }, 100);
+    });
+</script>
+</body>
+</html>
