@@ -20,7 +20,9 @@
 <h1>Client-side QR code generator</h1>
 
 <div>
-<small>After you generate <a href="https://secure.backblaze.com/app_keys.htm" target="_blank">Backblaze app key</a>, paste the output below to generate the QR code which you can use to pass credentials to your mobile.</small> <br><br/>
+<small>After you generate <a href="https://secure.backblaze.com/app_keys.htm" target="_blank">Backblaze app key</a>, paste the output below to generate the QR code which you can use to pass credentials to your mobile.</small>
+<br/><small>Due to security reasons, your credentials and QR code data will be cleaned up after 30 seconds.</small>
+<br/><br/>
 <textarea id="text" style="min-width: 370px; min-height:100px;" placeholder="Success! Your new application key has been created. It will only appear here once..."></textarea><br>
 
 <br/>
@@ -33,19 +35,31 @@
 <script type="application/javascript">
     var qrcode = new QRCode("qrcode");
 
+    let timeoutHandle;
+
     function makeCode() {
         var elText = document.getElementById("text");
         if (elText.value.length > 0) {
             qrcode.makeCode(elText.value);
         }
+
+        clearTimeout(timeoutHandle)
+        timeoutHandle = setTimeout(function() {
+            cleanupCredentials();
+            makeCode()
+        }, 1000*30); // 30 seconds
+    }
+
+    function cleanupCredentials() {
+        var elText = document.getElementById("text");
+        elText.value = "<removed>"
     }
 
     $("#text").on("blur", function () {
         makeCode();
-    }).on("keydown", function (e) {
+    }).on("keyup", function (e) {
         makeCode();
     }).on("paste", function (e) {
-        console.log("paste")
         setTimeout(function() {
             makeCode();
         }, 100);
