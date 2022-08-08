@@ -4,12 +4,12 @@
         "editor": "emacs",
         "fork_button": false,
         "display_hidden": false,
-        "name": "Sync for Backblaze B2 (beta)",
+        "name": "Sync for S3 (beta)",
         "upload_button": false,
         "connections": [
             {
-                "label": "BACKBLAZE",
-                "type": "backblaze"
+                "label": "S3",
+                "type": "s3"
             }
         ],
         "enable_share": true,

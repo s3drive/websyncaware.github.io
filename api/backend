@@ -1,17 +1,17 @@
 {
     "status": "ok",
     "result": {
-        "backblaze": {
+        "s3": {
             "type": {
                 "label": "type",
                 "type": "hidden",
                 "readonly": false,
                 "default": null,
-                "value": "backblaze",
+                "value": "s3",
                 "required": false
             },
             "username": {
-                "id": "b2_key_id",
+                "id": "s3_key_id",
                 "label": "username",
                 "type": "text",
                 "placeholder": "Key ID",
@@ -21,7 +21,7 @@
                 "required": true
             },
             "password": {
-                "id": "b2_key_secret",
+                "id": "s3_key_secret",
                 "label": "password",
                 "type": "password",
                 "placeholder": "Application key",
@@ -31,7 +31,7 @@
                 "required": true
             },
             "bucketName": {
-                "id": "b2_bucket_name",
+                "id": "s3_bucket_name",
                 "label": "bucketName",
                 "type": "text",
                 "placeholder": "Bucket name",
@@ -41,7 +41,7 @@
                 "required": true
             },
             "endpoint": {
-                "id": "b2_endpoint",
+                "id": "s3_endpoint",
                 "label": "endpoint",
                 "type": "text",
                 "placeholder": "Endpoint",
