@@ -1,4 +1,4 @@
-# Sync for Backblaze B2 web client
+# PhotoSync for S3 web client
 
 ### Self-serve
 npx webpack serve --mode=development

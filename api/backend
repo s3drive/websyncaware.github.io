@@ -49,6 +49,16 @@
                 "default": null,
                 "value": null,
                 "required": true
+            },
+            "encryption_key": {
+                "id": "s3_encryption_key",
+                "label": "encryption_key",
+                "type": "password",
+                "placeholder": "Encryption key",
+                "readonly": false,
+                "default": null,
+                "value": null,
+                "required": false
             }
         }
     }
