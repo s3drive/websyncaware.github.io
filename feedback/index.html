@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback</title>
+
+    <style>
+        body {
+            color: #373737;
+            font-family: "Arial";
+        }
+    </style>
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .clear {
+            float: none;
+            clear: both;
+        }
+
+        .rating {
+            width: 90px;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+            position: relative;
+        }
+
+        .rating > label {
+            float: right;
+            display: inline;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            width: 1.1em;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .rating > label:hover,
+        .rating > label:hover ~ label,
+        .rating > input.radio-btn:checked ~ label {
+            color: transparent;
+        }
+
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before,
+        .rating > input.radio-btn:checked ~ label:before,
+        .rating > input.radio-btn:checked ~ label:before {
+            content: "\2605";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+    </style>
+</head>
+<body>
+<form action="https://formcarry.com/s/XwIrbEymPqw" method="POST" accept-charset="UTF-8">
+
+    <h1>Feedback</h1>
+    <textarea name="feedback" placeholder="" style="min-width: 300px; min-height: 135px;" required></textarea>
+
+    <br><br><small>Would you like to leave any contact details? (Optional)</small>
+
+    <br><input type="text" name="contact" placeholder="Contact details" style="min-width: 200px" />
+
+    <br><br><small>How do you like the app? (Optional)</small>
+    <div class="rating">
+        <input id="star5" name="rating" type="radio" value="5" class="radio-btn hide" />
+        <label for="star5">☆</label>
+        <input id="star4" name="rating" type="radio" value="4" class="radio-btn hide" />
+        <label for="star4">☆</label>
+        <input id="star3" name="rating" type="radio" value="3" class="radio-btn hide" />
+        <label for="star3">☆</label>
+        <input id="star2" name="rating" type="radio" value="2" class="radio-btn hide" />
+        <label for="star2">☆</label>
+        <input id="star1" name="rating" type="radio" value="1" class="radio-btn hide" />
+        <label for="star1">☆</label>
+        <div class="clear"></div>
+    </div>
+
+    <input type="hidden" name="_gotcha">
+
+    <br>
+    <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>
